@@ -11,7 +11,7 @@
 
       <article class="story">
         <header class="story-lead">
-          <p class="eyebrow">Soroll de fons · Vol. 001</p>
+          <p class="eyebrow">Soroll de fons · Vol. {{ String(playlist.volume).padStart(3, '0') }}</p>
           <h1>{{ playlist.title }}</h1>
           <p class="story-kicker">{{ playlist.kicker }}</p>
           <p class="description">{{ playlist.description }}</p>

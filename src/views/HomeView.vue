@@ -13,7 +13,7 @@
         <article v-for="(playlist, index) in playlists" :key="playlist.slug" class="playlist-card" :class="{ 'playlist-card--featured': index === 0 }">
           <RouterLink :to="`/playlists/${playlist.slug}`" class="cover-link" :aria-label="`Llegir ${playlist.title}`"><PlaylistCover :playlist="playlist" /></RouterLink>
           <div class="card-copy">
-            <p class="eyebrow">Vol. {{ String(index + 1).padStart(3, '0') }} · {{ playlist.songCount }} cançons</p>
+            <p class="eyebrow">Vol. {{ String(playlist.volume ?? index + 1).padStart(3, '0') }} · {{ playlist.songCount }} cançons</p>
             <h3><RouterLink :to="`/playlists/${playlist.slug}`">{{ playlist.title }}</RouterLink></h3>
             <p class="kicker">{{ playlist.kicker }}</p>
             <div class="tags"><span v-for="tag in playlist.tags" :key="tag">{{ tag }}</span></div>
