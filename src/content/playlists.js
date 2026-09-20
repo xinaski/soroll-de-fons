@@ -9,6 +9,7 @@ import quanCallenElsLlopsMarkdown from './quan-callen-els-llops.md?raw'
 import queUdolinElsLlopsMarkdown from './que-udolin-els-llops.md?raw'
 import siMhasDeDeixarMarkdown from './si-mhas-de-deixar-posa-aquestes.md?raw'
 import ultimMotelMarkdown from './lultim-motel-abans-del-buit.md?raw'
+import caleidoscopiaMarkdown from './caleidoscopia.md?raw'
 
 function parsePlaylistMarkdown(markdown) {
   const lines = markdown.replace(/\r/g, '').split('\n')
@@ -116,6 +117,7 @@ const quanCallenElsLlops = parseStoryMarkdown(quanCallenElsLlopsMarkdown)
 const queUdolinElsLlops = parseStoryMarkdown(queUdolinElsLlopsMarkdown)
 const siMhasDeDeixar = parseStoryMarkdown(siMhasDeDeixarMarkdown)
 const ultimMotel = parseStoryMarkdown(ultimMotelMarkdown)
+const caleidoscopia = parseStoryMarkdown(caleidoscopiaMarkdown)
 
 export const playlists = [{
   volume: 1,
@@ -260,6 +262,19 @@ export const playlists = [{
   tags: ultimMotel.tags,
   songCount: ultimMotel.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
   chapters: ultimMotel.chapters,
+}, {
+  volume: 12,
+  slug: 'caleidoscopia',
+  title: caleidoscopia.title,
+  kicker: 'Les mateixes peces. Un món diferent cada vegada que gires el tub.',
+  description: caleidoscopia.description,
+  cover: '/covers/caleidoscopia.webp',
+  coverAlt: 'Dues persones assegudes al costat d’una piscina buida, davant d’un paisatge desèrtic',
+  spotifyUrl: 'https://open.spotify.com/playlist/46qiN2A4HwGqMZtKZ9aFPv?si=d328c473ae564a4b',
+  spotifyEmbedUrl: 'https://open.spotify.com/embed/playlist/46qiN2A4HwGqMZtKZ9aFPv?utm_source=generator&theme=0',
+  tags: caleidoscopia.tags,
+  songCount: caleidoscopia.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
+  chapters: caleidoscopia.chapters,
 }]
 
 export const getPlaylist = (slug) => playlists.find((playlist) => playlist.slug === slug)
