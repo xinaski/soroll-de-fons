@@ -3,6 +3,7 @@ import diumengeComunaMarkdown from './diumenge-a-la-comuna.md?raw'
 import sortidaEquivocadaMarkdown from './la-sortida-equivocada.md?raw'
 import perdutAlsSetantaMarkdown from './perdut-en-algun-lloc-dels-70.md?raw'
 import finsQueLesRodesAguantinMarkdown from './fins-que-les-rodes-aguantin.md?raw'
+import malesDecisionsGransCanconsMarkdown from './males-decisions-grans-cancons.md?raw'
 
 function parsePlaylistMarkdown(markdown) {
   const lines = markdown.replace(/\r/g, '').split('\n')
@@ -104,6 +105,7 @@ const diumengeComuna = parseStoryMarkdown(diumengeComunaMarkdown)
 const sortidaEquivocada = parseStoryMarkdown(sortidaEquivocadaMarkdown)
 const perdutAlsSetanta = parseStoryMarkdown(perdutAlsSetantaMarkdown)
 const finsQueLesRodesAguantin = parseStoryMarkdown(finsQueLesRodesAguantinMarkdown)
+const malesDecisionsGransCancons = parseStoryMarkdown(malesDecisionsGransCanconsMarkdown)
 
 export const playlists = [{
   volume: 1,
@@ -170,6 +172,19 @@ export const playlists = [{
   tags: finsQueLesRodesAguantin.tags,
   songCount: finsQueLesRodesAguantin.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
   chapters: finsQueLesRodesAguantin.chapters,
+}, {
+  volume: 6,
+  slug: 'males-decisions-grans-cancons',
+  title: malesDecisionsGransCancons.title,
+  kicker: 'Algunes les tornaria a prendre. D’altres, probablement també.',
+  description: malesDecisionsGransCancons.description,
+  cover: '/covers/males-decisions-grans-cancons.webp',
+  coverAlt: 'Un home amb ulleres de sol descansant en un descapotable davant del mar al capvespre',
+  spotifyUrl: 'https://open.spotify.com/playlist/7nKGMetCe0UP5c84dcFfmL?si=5c6cb27f7c5c4cc3',
+  spotifyEmbedUrl: 'https://open.spotify.com/embed/playlist/7nKGMetCe0UP5c84dcFfmL?utm_source=generator&theme=0',
+  tags: malesDecisionsGransCancons.tags,
+  songCount: malesDecisionsGransCancons.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
+  chapters: malesDecisionsGransCancons.chapters,
 }]
 
 export const getPlaylist = (slug) => playlists.find((playlist) => playlist.slug === slug)
