@@ -4,6 +4,7 @@ import sortidaEquivocadaMarkdown from './la-sortida-equivocada.md?raw'
 import perdutAlsSetantaMarkdown from './perdut-en-algun-lloc-dels-70.md?raw'
 import finsQueLesRodesAguantinMarkdown from './fins-que-les-rodes-aguantin.md?raw'
 import malesDecisionsGransCanconsMarkdown from './males-decisions-grans-cancons.md?raw'
+import contraElsLlopsMarkdown from './contra-els-llops.md?raw'
 
 function parsePlaylistMarkdown(markdown) {
   const lines = markdown.replace(/\r/g, '').split('\n')
@@ -106,6 +107,7 @@ const sortidaEquivocada = parseStoryMarkdown(sortidaEquivocadaMarkdown)
 const perdutAlsSetanta = parseStoryMarkdown(perdutAlsSetantaMarkdown)
 const finsQueLesRodesAguantin = parseStoryMarkdown(finsQueLesRodesAguantinMarkdown)
 const malesDecisionsGransCancons = parseStoryMarkdown(malesDecisionsGransCanconsMarkdown)
+const contraElsLlops = parseStoryMarkdown(contraElsLlopsMarkdown)
 
 export const playlists = [{
   volume: 1,
@@ -185,6 +187,19 @@ export const playlists = [{
   tags: malesDecisionsGransCancons.tags,
   songCount: malesDecisionsGransCancons.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
   chapters: malesDecisionsGransCancons.chapters,
+}, {
+  volume: 7,
+  slug: 'contra-els-llops',
+  title: contraElsLlops.title,
+  kicker: 'No tots venien del bosc.',
+  description: contraElsLlops.description,
+  cover: '/covers/contra-els-llops.webp',
+  coverAlt: 'Un home amb ulleres de sol i una pell de llop al cap, davant d’un bosc fosc',
+  spotifyUrl: 'https://open.spotify.com/playlist/5C0II43NabSYWwPH6He7Jq?si=d2638f7429a9403a',
+  spotifyEmbedUrl: 'https://open.spotify.com/embed/playlist/5C0II43NabSYWwPH6He7Jq?utm_source=generator&theme=0',
+  tags: contraElsLlops.tags,
+  songCount: contraElsLlops.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
+  chapters: contraElsLlops.chapters,
 }]
 
 export const getPlaylist = (slug) => playlists.find((playlist) => playlist.slug === slug)
