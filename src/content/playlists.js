@@ -7,6 +7,7 @@ import malesDecisionsGransCanconsMarkdown from './males-decisions-grans-cancons.
 import contraElsLlopsMarkdown from './contra-els-llops.md?raw'
 import quanCallenElsLlopsMarkdown from './quan-callen-els-llops.md?raw'
 import queUdolinElsLlopsMarkdown from './que-udolin-els-llops.md?raw'
+import siMhasDeDeixarMarkdown from './si-mhas-de-deixar-posa-aquestes.md?raw'
 
 function parsePlaylistMarkdown(markdown) {
   const lines = markdown.replace(/\r/g, '').split('\n')
@@ -112,6 +113,7 @@ const malesDecisionsGransCancons = parseStoryMarkdown(malesDecisionsGransCancons
 const contraElsLlops = parseStoryMarkdown(contraElsLlopsMarkdown)
 const quanCallenElsLlops = parseStoryMarkdown(quanCallenElsLlopsMarkdown)
 const queUdolinElsLlops = parseStoryMarkdown(queUdolinElsLlopsMarkdown)
+const siMhasDeDeixar = parseStoryMarkdown(siMhasDeDeixarMarkdown)
 
 export const playlists = [{
   volume: 1,
@@ -230,6 +232,19 @@ export const playlists = [{
   tags: queUdolinElsLlops.tags,
   songCount: queUdolinElsLlops.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
   chapters: queUdolinElsLlops.chapters,
+}, {
+  volume: 10,
+  slug: 'si-mhas-de-deixar-posa-aquestes',
+  title: siMhasDeDeixar.title,
+  kicker: 'Que almenys la caiguda tingui banda sonora.',
+  description: siMhasDeDeixar.description,
+  cover: '/covers/si-mhas-de-deixar-posa-aquestes.webp',
+  coverAlt: 'Una mà alçada amb LOVE tatuat als dits i un anell al polze',
+  spotifyUrl: 'https://open.spotify.com/playlist/26CEyjE8Tm1qgoq7Jce6hD?si=46fbd609f51e4bef',
+  spotifyEmbedUrl: 'https://open.spotify.com/embed/playlist/26CEyjE8Tm1qgoq7Jce6hD?utm_source=generator&theme=0',
+  tags: siMhasDeDeixar.tags,
+  songCount: siMhasDeDeixar.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
+  chapters: siMhasDeDeixar.chapters,
 }]
 
 export const getPlaylist = (slug) => playlists.find((playlist) => playlist.slug === slug)
