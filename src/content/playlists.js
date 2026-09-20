@@ -8,6 +8,7 @@ import contraElsLlopsMarkdown from './contra-els-llops.md?raw'
 import quanCallenElsLlopsMarkdown from './quan-callen-els-llops.md?raw'
 import queUdolinElsLlopsMarkdown from './que-udolin-els-llops.md?raw'
 import siMhasDeDeixarMarkdown from './si-mhas-de-deixar-posa-aquestes.md?raw'
+import ultimMotelMarkdown from './lultim-motel-abans-del-buit.md?raw'
 
 function parsePlaylistMarkdown(markdown) {
   const lines = markdown.replace(/\r/g, '').split('\n')
@@ -114,6 +115,7 @@ const contraElsLlops = parseStoryMarkdown(contraElsLlopsMarkdown)
 const quanCallenElsLlops = parseStoryMarkdown(quanCallenElsLlopsMarkdown)
 const queUdolinElsLlops = parseStoryMarkdown(queUdolinElsLlopsMarkdown)
 const siMhasDeDeixar = parseStoryMarkdown(siMhasDeDeixarMarkdown)
+const ultimMotel = parseStoryMarkdown(ultimMotelMarkdown)
 
 export const playlists = [{
   volume: 1,
@@ -245,6 +247,19 @@ export const playlists = [{
   tags: siMhasDeDeixar.tags,
   songCount: siMhasDeDeixar.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
   chapters: siMhasDeDeixar.chapters,
+}, {
+  volume: 11,
+  slug: 'lultim-motel-abans-del-buit',
+  title: ultimMotel.title,
+  kicker: 'Una nit al Blue Moon Motel. La resta és difícil de demostrar.',
+  description: ultimMotel.description,
+  cover: '/covers/lultim-motel-abans-del-buit.webp',
+  coverAlt: 'Un home amb barret, ulleres i cigarret carregant una màquina d’escriure vermella pel passadís d’un motel',
+  spotifyUrl: 'https://open.spotify.com/playlist/6dh0tFDLrlx3qk84qLcjVu?si=227fea2324ff4ead',
+  spotifyEmbedUrl: 'https://open.spotify.com/embed/playlist/6dh0tFDLrlx3qk84qLcjVu?utm_source=generator&theme=0',
+  tags: ultimMotel.tags,
+  songCount: ultimMotel.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
+  chapters: ultimMotel.chapters,
 }]
 
 export const getPlaylist = (slug) => playlists.find((playlist) => playlist.slug === slug)
