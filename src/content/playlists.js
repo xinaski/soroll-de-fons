@@ -1,6 +1,7 @@
 import malesIntencionsMarkdown from './males-intencions.md?raw'
 import diumengeComunaMarkdown from './diumenge-a-la-comuna.md?raw'
 import sortidaEquivocadaMarkdown from './la-sortida-equivocada.md?raw'
+import perdutAlsSetantaMarkdown from './perdut-en-algun-lloc-dels-70.md?raw'
 
 function parsePlaylistMarkdown(markdown) {
   const lines = markdown.replace(/\r/g, '').split('\n')
@@ -100,6 +101,7 @@ function parseStoryMarkdown(markdown) {
 const content = parsePlaylistMarkdown(malesIntencionsMarkdown)
 const diumengeComuna = parseStoryMarkdown(diumengeComunaMarkdown)
 const sortidaEquivocada = parseStoryMarkdown(sortidaEquivocadaMarkdown)
+const perdutAlsSetanta = parseStoryMarkdown(perdutAlsSetantaMarkdown)
 
 export const playlists = [{
   volume: 1,
@@ -140,6 +142,19 @@ export const playlists = [{
   tags: sortidaEquivocada.tags,
   songCount: sortidaEquivocada.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
   chapters: sortidaEquivocada.chapters,
+}, {
+  volume: 4,
+  slug: 'perdut-en-algun-lloc-dels-70',
+  title: perdutAlsSetanta.title,
+  kicker: 'Va marxar pensant que necessitava saber on anava. Amb el temps va descobrir que potser era just al contrari.',
+  description: perdutAlsSetanta.description,
+  cover: '/covers/perdut-en-algun-lloc-dels-70.webp',
+  coverAlt: 'Un jove de cabells llargs assegut al voral d’una carretera als anys setanta',
+  spotifyUrl: 'https://open.spotify.com/playlist/2pMKY0K5VNmsXQLX9OVWZa?si=7fdc33bdd0a24a6e',
+  spotifyEmbedUrl: 'https://open.spotify.com/embed/playlist/2pMKY0K5VNmsXQLX9OVWZa?utm_source=generator&theme=0',
+  tags: perdutAlsSetanta.tags,
+  songCount: perdutAlsSetanta.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
+  chapters: perdutAlsSetanta.chapters,
 }]
 
 export const getPlaylist = (slug) => playlists.find((playlist) => playlist.slug === slug)
