@@ -5,6 +5,7 @@ import perdutAlsSetantaMarkdown from './perdut-en-algun-lloc-dels-70.md?raw'
 import finsQueLesRodesAguantinMarkdown from './fins-que-les-rodes-aguantin.md?raw'
 import malesDecisionsGransCanconsMarkdown from './males-decisions-grans-cancons.md?raw'
 import contraElsLlopsMarkdown from './contra-els-llops.md?raw'
+import quanCallenElsLlopsMarkdown from './quan-callen-els-llops.md?raw'
 
 function parsePlaylistMarkdown(markdown) {
   const lines = markdown.replace(/\r/g, '').split('\n')
@@ -108,6 +109,7 @@ const perdutAlsSetanta = parseStoryMarkdown(perdutAlsSetantaMarkdown)
 const finsQueLesRodesAguantin = parseStoryMarkdown(finsQueLesRodesAguantinMarkdown)
 const malesDecisionsGransCancons = parseStoryMarkdown(malesDecisionsGransCanconsMarkdown)
 const contraElsLlops = parseStoryMarkdown(contraElsLlopsMarkdown)
+const quanCallenElsLlops = parseStoryMarkdown(quanCallenElsLlopsMarkdown)
 
 export const playlists = [{
   volume: 1,
@@ -200,6 +202,19 @@ export const playlists = [{
   tags: contraElsLlops.tags,
   songCount: contraElsLlops.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
   chapters: contraElsLlops.chapters,
+}, {
+  volume: 8,
+  slug: 'quan-callen-els-llops',
+  title: quanCallenElsLlops.title,
+  kicker: 'La carretera continuava allà.',
+  description: quanCallenElsLlops.description,
+  cover: '/covers/quan-callen-els-llops.webp',
+  coverAlt: 'Dos llops allunyant-se reflectits al retrovisor d’un cotxe al capvespre',
+  spotifyUrl: 'https://open.spotify.com/playlist/6ajo73hj5QlkRjd7AGGc5B?si=9f03ac3b09ea447b',
+  spotifyEmbedUrl: 'https://open.spotify.com/embed/playlist/6ajo73hj5QlkRjd7AGGc5B?utm_source=generator&theme=0',
+  tags: quanCallenElsLlops.tags,
+  songCount: quanCallenElsLlops.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
+  chapters: quanCallenElsLlops.chapters,
 }]
 
 export const getPlaylist = (slug) => playlists.find((playlist) => playlist.slug === slug)
