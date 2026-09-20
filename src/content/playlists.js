@@ -2,6 +2,7 @@ import malesIntencionsMarkdown from './males-intencions.md?raw'
 import diumengeComunaMarkdown from './diumenge-a-la-comuna.md?raw'
 import sortidaEquivocadaMarkdown from './la-sortida-equivocada.md?raw'
 import perdutAlsSetantaMarkdown from './perdut-en-algun-lloc-dels-70.md?raw'
+import finsQueLesRodesAguantinMarkdown from './fins-que-les-rodes-aguantin.md?raw'
 
 function parsePlaylistMarkdown(markdown) {
   const lines = markdown.replace(/\r/g, '').split('\n')
@@ -102,6 +103,7 @@ const content = parsePlaylistMarkdown(malesIntencionsMarkdown)
 const diumengeComuna = parseStoryMarkdown(diumengeComunaMarkdown)
 const sortidaEquivocada = parseStoryMarkdown(sortidaEquivocadaMarkdown)
 const perdutAlsSetanta = parseStoryMarkdown(perdutAlsSetantaMarkdown)
+const finsQueLesRodesAguantin = parseStoryMarkdown(finsQueLesRodesAguantinMarkdown)
 
 export const playlists = [{
   volume: 1,
@@ -155,6 +157,19 @@ export const playlists = [{
   tags: perdutAlsSetanta.tags,
   songCount: perdutAlsSetanta.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
   chapters: perdutAlsSetanta.chapters,
+}, {
+  volume: 5,
+  slug: 'fins-que-les-rodes-aguantin',
+  title: finsQueLesRodesAguantin.title,
+  kicker: 'Ens estimàvem prou per tornar sempre. No prou bé per deixar de fer-nos mal.',
+  description: finsQueLesRodesAguantin.description,
+  cover: '/covers/fins-que-les-rodes-aguantin.webp',
+  coverAlt: 'Una parella abraçada dins d’un cotxe, en una fotografia nocturna en blanc i negre',
+  spotifyUrl: 'https://open.spotify.com/playlist/1LyANTrvKYH5CfnIEHW3OR?si=b4f4b69c7cae411b',
+  spotifyEmbedUrl: 'https://open.spotify.com/embed/playlist/1LyANTrvKYH5CfnIEHW3OR?utm_source=generator&theme=0',
+  tags: finsQueLesRodesAguantin.tags,
+  songCount: finsQueLesRodesAguantin.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
+  chapters: finsQueLesRodesAguantin.chapters,
 }]
 
 export const getPlaylist = (slug) => playlists.find((playlist) => playlist.slug === slug)
