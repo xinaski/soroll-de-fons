@@ -1,5 +1,6 @@
 import malesIntencionsMarkdown from './males-intencions.md?raw'
 import diumengeComunaMarkdown from './diumenge-a-la-comuna.md?raw'
+import sortidaEquivocadaMarkdown from './la-sortida-equivocada.md?raw'
 
 function parsePlaylistMarkdown(markdown) {
   const lines = markdown.replace(/\r/g, '').split('\n')
@@ -98,6 +99,7 @@ function parseStoryMarkdown(markdown) {
 
 const content = parsePlaylistMarkdown(malesIntencionsMarkdown)
 const diumengeComuna = parseStoryMarkdown(diumengeComunaMarkdown)
+const sortidaEquivocada = parseStoryMarkdown(sortidaEquivocadaMarkdown)
 
 export const playlists = [{
   volume: 1,
@@ -125,6 +127,19 @@ export const playlists = [{
   tags: diumengeComuna.tags,
   songCount: diumengeComuna.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
   chapters: diumengeComuna.chapters,
+}, {
+  volume: 3,
+  slug: 'la-sortida-equivocada',
+  title: sortidaEquivocada.title,
+  kicker: 'Havíem de ser a Acapulco abans que es fes fosc. A partir d’aquí, les versions no coincideixen.',
+  description: sortidaEquivocada.description,
+  cover: '/covers/la-sortida-equivocada.webp',
+  coverAlt: 'Dos homes viatjant en un descapotable pel desert mexicà',
+  spotifyUrl: 'https://open.spotify.com/playlist/02SBXDV2MPRqYblhz0aNXd?si=a09602beb1294d7e',
+  spotifyEmbedUrl: 'https://open.spotify.com/embed/playlist/02SBXDV2MPRqYblhz0aNXd?utm_source=generator&theme=0',
+  tags: sortidaEquivocada.tags,
+  songCount: sortidaEquivocada.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
+  chapters: sortidaEquivocada.chapters,
 }]
 
 export const getPlaylist = (slug) => playlists.find((playlist) => playlist.slug === slug)
