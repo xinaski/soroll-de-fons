@@ -6,6 +6,7 @@ import finsQueLesRodesAguantinMarkdown from './fins-que-les-rodes-aguantin.md?ra
 import malesDecisionsGransCanconsMarkdown from './males-decisions-grans-cancons.md?raw'
 import contraElsLlopsMarkdown from './contra-els-llops.md?raw'
 import quanCallenElsLlopsMarkdown from './quan-callen-els-llops.md?raw'
+import queUdolinElsLlopsMarkdown from './que-udolin-els-llops.md?raw'
 
 function parsePlaylistMarkdown(markdown) {
   const lines = markdown.replace(/\r/g, '').split('\n')
@@ -110,6 +111,7 @@ const finsQueLesRodesAguantin = parseStoryMarkdown(finsQueLesRodesAguantinMarkdo
 const malesDecisionsGransCancons = parseStoryMarkdown(malesDecisionsGransCanconsMarkdown)
 const contraElsLlops = parseStoryMarkdown(contraElsLlopsMarkdown)
 const quanCallenElsLlops = parseStoryMarkdown(quanCallenElsLlopsMarkdown)
+const queUdolinElsLlops = parseStoryMarkdown(queUdolinElsLlopsMarkdown)
 
 export const playlists = [{
   volume: 1,
@@ -215,6 +217,19 @@ export const playlists = [{
   tags: quanCallenElsLlops.tags,
   songCount: quanCallenElsLlops.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
   chapters: quanCallenElsLlops.chapters,
+}, {
+  volume: 9,
+  slug: 'que-udolin-els-llops',
+  title: queUdolinElsLlops.title,
+  kicker: 'Aprendre a no deixar de viure quan tornen.',
+  description: queUdolinElsLlops.description,
+  cover: '/covers/que-udolin-els-llops.webp',
+  coverAlt: 'Una mà tatuada apujant el volum d’un radiocasset vell dins d’un cotxe',
+  spotifyUrl: 'https://open.spotify.com/playlist/6aGV1aD2j7SsgNoQl0nBfy?si=c2108159b27145bb',
+  spotifyEmbedUrl: 'https://open.spotify.com/embed/playlist/6aGV1aD2j7SsgNoQl0nBfy?utm_source=generator&theme=0',
+  tags: queUdolinElsLlops.tags,
+  songCount: queUdolinElsLlops.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
+  chapters: queUdolinElsLlops.chapters,
 }]
 
 export const getPlaylist = (slug) => playlists.find((playlist) => playlist.slug === slug)
