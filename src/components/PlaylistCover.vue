@@ -1,7 +1,7 @@
 <template>
   <figure class="cover">
     <img :src="playlist.cover" :alt="playlist.coverAlt" />
-    <figcaption><span>{{ playlist.title }}</span><small>SDF · 001</small></figcaption>
+    <figcaption><span>{{ playlist.title }}</span><small>SDF · {{ String(playlist.volume).padStart(3, '0') }}</small></figcaption>
   </figure>
 </template>
 
