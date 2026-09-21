@@ -11,6 +11,7 @@ import siMhasDeDeixarMarkdown from './si-mhas-de-deixar-posa-aquestes.md?raw'
 import ultimMotelMarkdown from './lultim-motel-abans-del-buit.md?raw'
 import caleidoscopiaMarkdown from './caleidoscopia.md?raw'
 import malaBavaMarkdown from './mala-bava.md?raw'
+import polsSotaLesUnglesMarkdown from './pols-sota-les-ungles.md?raw'
 
 function parsePlaylistMarkdown(markdown) {
   const lines = markdown.replace(/\r/g, '').split('\n')
@@ -120,6 +121,7 @@ const siMhasDeDeixar = parseStoryMarkdown(siMhasDeDeixarMarkdown)
 const ultimMotel = parseStoryMarkdown(ultimMotelMarkdown)
 const caleidoscopia = parseStoryMarkdown(caleidoscopiaMarkdown)
 const malaBava = parseStoryMarkdown(malaBavaMarkdown)
+const polsSotaLesUngles = parseStoryMarkdown(polsSotaLesUnglesMarkdown)
 
 export const playlists = [{
   volume: 1,
@@ -290,6 +292,19 @@ export const playlists = [{
   tags: malaBava.tags,
   songCount: malaBava.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
   chapters: malaBava.chapters,
+}, {
+  volume: 14,
+  slug: 'pols-sota-les-ungles',
+  title: polsSotaLesUngles.title,
+  kicker: 'Hi ha feines que s’acaben quan plegues. D’altres te les emportes a casa.',
+  description: polsSotaLesUngles.description,
+  cover: '/covers/pols-sota-les-ungles.webp',
+  coverAlt: 'Un home cavant terra fosca amb una pala sota un cel de tempesta',
+  spotifyUrl: 'https://open.spotify.com/playlist/2X7KwSgiUo4fXXTAZcbv1e?si=6c4efe3b6cde4727',
+  spotifyEmbedUrl: 'https://open.spotify.com/embed/playlist/2X7KwSgiUo4fXXTAZcbv1e?utm_source=generator&theme=0',
+  tags: polsSotaLesUngles.tags,
+  songCount: polsSotaLesUngles.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
+  chapters: polsSotaLesUngles.chapters,
 }]
 
 export const getPlaylist = (slug) => playlists.find((playlist) => playlist.slug === slug)
