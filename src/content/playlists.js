@@ -15,6 +15,7 @@ import polsSotaLesUnglesMarkdown from './pols-sota-les-ungles.md?raw'
 import malaCollitaMarkdown from './mala-collita.md?raw'
 import totMalamentGraciesMarkdown from './tot-malament-gracies.md?raw'
 import ultimSoterraniTokioMarkdown from './lultim-soterrani-de-tokio.md?raw'
+import ultimDolarPastisMarkdown from './lultim-dolar-per-un-pastis-de-poma-amb-gelat.md?raw'
 
 function parsePlaylistMarkdown(markdown) {
   const lines = markdown.replace(/\r/g, '').split('\n')
@@ -128,6 +129,7 @@ const polsSotaLesUngles = parseStoryMarkdown(polsSotaLesUnglesMarkdown)
 const malaCollita = parseStoryMarkdown(malaCollitaMarkdown)
 const totMalamentGracies = parseStoryMarkdown(totMalamentGraciesMarkdown)
 const ultimSoterraniTokio = parseStoryMarkdown(ultimSoterraniTokioMarkdown)
+const ultimDolarPastis = parseStoryMarkdown(ultimDolarPastisMarkdown)
 
 export const playlists = [{
   volume: 1,
@@ -350,6 +352,19 @@ export const playlists = [{
   tags: ultimSoterraniTokio.tags,
   songCount: ultimSoterraniTokio.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
   chapters: ultimSoterraniTokio.chapters,
+}, {
+  volume: 18,
+  slug: 'lultim-dolar-per-un-pastis-de-poma-amb-gelat',
+  title: ultimDolarPastis.title,
+  kicker: 'Pocs diners, molta carretera i una gana infinita de viure.',
+  description: ultimDolarPastis.description,
+  cover: '/covers/lultim-dolar-per-un-pastis-de-poma-amb-gelat.webp',
+  coverAlt: 'Dos amics en un diner de la Route 66 mirant la posta de sol, amb pastís de poma sobre la taula',
+  spotifyUrl: 'https://open.spotify.com/playlist/1bcZRkZVj29IBCH04UDq5L?si=c19f9a57b033435d',
+  spotifyEmbedUrl: 'https://open.spotify.com/embed/playlist/1bcZRkZVj29IBCH04UDq5L?utm_source=generator&theme=0',
+  tags: ultimDolarPastis.tags,
+  songCount: ultimDolarPastis.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
+  chapters: ultimDolarPastis.chapters,
 }]
 
 export const getPlaylist = (slug) => playlists.find((playlist) => playlist.slug === slug)
