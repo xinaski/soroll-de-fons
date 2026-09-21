@@ -13,6 +13,7 @@ import caleidoscopiaMarkdown from './caleidoscopia.md?raw'
 import malaBavaMarkdown from './mala-bava.md?raw'
 import polsSotaLesUnglesMarkdown from './pols-sota-les-ungles.md?raw'
 import malaCollitaMarkdown from './mala-collita.md?raw'
+import totMalamentGraciesMarkdown from './tot-malament-gracies.md?raw'
 
 function parsePlaylistMarkdown(markdown) {
   const lines = markdown.replace(/\r/g, '').split('\n')
@@ -124,6 +125,7 @@ const caleidoscopia = parseStoryMarkdown(caleidoscopiaMarkdown)
 const malaBava = parseStoryMarkdown(malaBavaMarkdown)
 const polsSotaLesUngles = parseStoryMarkdown(polsSotaLesUnglesMarkdown)
 const malaCollita = parseStoryMarkdown(malaCollitaMarkdown)
+const totMalamentGracies = parseStoryMarkdown(totMalamentGraciesMarkdown)
 
 export const playlists = [{
   volume: 1,
@@ -320,6 +322,19 @@ export const playlists = [{
   tags: malaCollita.tags,
   songCount: malaCollita.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
   chapters: malaCollita.chapters,
+}, {
+  volume: 16,
+  slug: 'tot-malament-gracies',
+  title: totMalamentGracies.title,
+  kicker: 'Tenia una entrevista de feina. La resta del dia va ser conseqüència d’això.',
+  description: totMalamentGracies.description,
+  cover: '/covers/tot-malament-gracies.webp',
+  coverAlt: 'Un home tatuat assegut de nit en un banc amb una planta i un gos negre',
+  spotifyUrl: 'https://open.spotify.com/playlist/6HKMAFRPYEB6mDQ10F3gDF?si=e5dcae559abc4c6e',
+  spotifyEmbedUrl: 'https://open.spotify.com/embed/playlist/6HKMAFRPYEB6mDQ10F3gDF?utm_source=generator&theme=0',
+  tags: totMalamentGracies.tags,
+  songCount: totMalamentGracies.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
+  chapters: totMalamentGracies.chapters,
 }]
 
 export const getPlaylist = (slug) => playlists.find((playlist) => playlist.slug === slug)
