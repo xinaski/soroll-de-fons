@@ -14,6 +14,7 @@ import malaBavaMarkdown from './mala-bava.md?raw'
 import polsSotaLesUnglesMarkdown from './pols-sota-les-ungles.md?raw'
 import malaCollitaMarkdown from './mala-collita.md?raw'
 import totMalamentGraciesMarkdown from './tot-malament-gracies.md?raw'
+import ultimSoterraniTokioMarkdown from './lultim-soterrani-de-tokio.md?raw'
 
 function parsePlaylistMarkdown(markdown) {
   const lines = markdown.replace(/\r/g, '').split('\n')
@@ -126,6 +127,7 @@ const malaBava = parseStoryMarkdown(malaBavaMarkdown)
 const polsSotaLesUngles = parseStoryMarkdown(polsSotaLesUnglesMarkdown)
 const malaCollita = parseStoryMarkdown(malaCollitaMarkdown)
 const totMalamentGracies = parseStoryMarkdown(totMalamentGraciesMarkdown)
+const ultimSoterraniTokio = parseStoryMarkdown(ultimSoterraniTokioMarkdown)
 
 export const playlists = [{
   volume: 1,
@@ -335,6 +337,19 @@ export const playlists = [{
   tags: totMalamentGracies.tags,
   songCount: totMalamentGracies.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
   chapters: totMalamentGracies.chapters,
+}, {
+  volume: 17,
+  slug: 'lultim-soterrani-de-tokio',
+  title: ultimSoterraniTokio.title,
+  kicker: 'Hi ha llocs que no tanquen. Simplement deixen de tornar a obrir.',
+  description: ultimSoterraniTokio.description,
+  cover: '/covers/lultim-soterrani-de-tokio.webp',
+  coverAlt: 'El propietari d’un petit club de jazz japonès fumant darrere la barra durant l’última nit',
+  spotifyUrl: 'https://open.spotify.com/playlist/5V1SXK2greibNQsrpJ6y6v?si=ff5a29a0cd724f4b',
+  spotifyEmbedUrl: 'https://open.spotify.com/embed/playlist/5V1SXK2greibNQsrpJ6y6v?utm_source=generator&theme=0',
+  tags: ultimSoterraniTokio.tags,
+  songCount: ultimSoterraniTokio.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
+  chapters: ultimSoterraniTokio.chapters,
 }]
 
 export const getPlaylist = (slug) => playlists.find((playlist) => playlist.slug === slug)
