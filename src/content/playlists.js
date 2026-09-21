@@ -12,6 +12,7 @@ import ultimMotelMarkdown from './lultim-motel-abans-del-buit.md?raw'
 import caleidoscopiaMarkdown from './caleidoscopia.md?raw'
 import malaBavaMarkdown from './mala-bava.md?raw'
 import polsSotaLesUnglesMarkdown from './pols-sota-les-ungles.md?raw'
+import malaCollitaMarkdown from './mala-collita.md?raw'
 
 function parsePlaylistMarkdown(markdown) {
   const lines = markdown.replace(/\r/g, '').split('\n')
@@ -122,6 +123,7 @@ const ultimMotel = parseStoryMarkdown(ultimMotelMarkdown)
 const caleidoscopia = parseStoryMarkdown(caleidoscopiaMarkdown)
 const malaBava = parseStoryMarkdown(malaBavaMarkdown)
 const polsSotaLesUngles = parseStoryMarkdown(polsSotaLesUnglesMarkdown)
+const malaCollita = parseStoryMarkdown(malaCollitaMarkdown)
 
 export const playlists = [{
   volume: 1,
@@ -305,6 +307,19 @@ export const playlists = [{
   tags: polsSotaLesUngles.tags,
   songCount: polsSotaLesUngles.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
   chapters: polsSotaLesUngles.chapters,
+}, {
+  volume: 15,
+  slug: 'mala-collita',
+  title: malaCollita.title,
+  kicker: 'Hi havia feina per fer. Aquest va ser el primer problema.',
+  description: malaCollita.description,
+  cover: '/covers/mala-collita.webp',
+  coverAlt: 'Unes cames amb botes de cowboy descansant a la finestra d’una pickup groga al capvespre',
+  spotifyUrl: 'https://open.spotify.com/playlist/60QpaYoPZfkzh9iL7jJgO5?si=69a9580f2d3d4a6b',
+  spotifyEmbedUrl: 'https://open.spotify.com/embed/playlist/60QpaYoPZfkzh9iL7jJgO5?utm_source=generator&theme=0',
+  tags: malaCollita.tags,
+  songCount: malaCollita.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
+  chapters: malaCollita.chapters,
 }]
 
 export const getPlaylist = (slug) => playlists.find((playlist) => playlist.slug === slug)
