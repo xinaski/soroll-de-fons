@@ -10,6 +10,7 @@ import queUdolinElsLlopsMarkdown from './que-udolin-els-llops.md?raw'
 import siMhasDeDeixarMarkdown from './si-mhas-de-deixar-posa-aquestes.md?raw'
 import ultimMotelMarkdown from './lultim-motel-abans-del-buit.md?raw'
 import caleidoscopiaMarkdown from './caleidoscopia.md?raw'
+import malaBavaMarkdown from './mala-bava.md?raw'
 
 function parsePlaylistMarkdown(markdown) {
   const lines = markdown.replace(/\r/g, '').split('\n')
@@ -118,6 +119,7 @@ const queUdolinElsLlops = parseStoryMarkdown(queUdolinElsLlopsMarkdown)
 const siMhasDeDeixar = parseStoryMarkdown(siMhasDeDeixarMarkdown)
 const ultimMotel = parseStoryMarkdown(ultimMotelMarkdown)
 const caleidoscopia = parseStoryMarkdown(caleidoscopiaMarkdown)
+const malaBava = parseStoryMarkdown(malaBavaMarkdown)
 
 export const playlists = [{
   volume: 1,
@@ -275,6 +277,19 @@ export const playlists = [{
   tags: caleidoscopia.tags,
   songCount: caleidoscopia.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
   chapters: caleidoscopia.chapters,
+}, {
+  volume: 13,
+  slug: 'mala-bava',
+  title: malaBava.title,
+  kicker: 'Una última i marxem.',
+  description: malaBava.description,
+  cover: '/covers/mala-bava.webp',
+  coverAlt: 'Un músic estirat damunt d’una bateria enmig del caos d’un concert, tenyit de verd',
+  spotifyUrl: 'https://open.spotify.com/playlist/5TAuLQza167NLdZWpRMVID?si=d3117bb82a1145c9',
+  spotifyEmbedUrl: 'https://open.spotify.com/embed/playlist/5TAuLQza167NLdZWpRMVID?utm_source=generator&theme=0',
+  tags: malaBava.tags,
+  songCount: malaBava.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
+  chapters: malaBava.chapters,
 }]
 
 export const getPlaylist = (slug) => playlists.find((playlist) => playlist.slug === slug)
