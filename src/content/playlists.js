@@ -18,6 +18,7 @@ import ultimSoterraniTokioMarkdown from './lultim-soterrani-de-tokio.md?raw'
 import ultimDolarPastisMarkdown from './lultim-dolar-per-un-pastis-de-poma-amb-gelat.md?raw'
 import abansQueComencesPloureMarkdown from './abans-que-comences-a-ploure.md?raw'
 import despresQueSortisSolMarkdown from './despres-que-sortis-el-sol.md?raw'
+import gentlemanMarkdown from './gentleman.md?raw'
 
 function parsePlaylistMarkdown(markdown) {
   const lines = markdown.replace(/\r/g, '').split('\n')
@@ -134,6 +135,7 @@ const ultimSoterraniTokio = parseStoryMarkdown(ultimSoterraniTokioMarkdown)
 const ultimDolarPastis = parseStoryMarkdown(ultimDolarPastisMarkdown)
 const abansQueComencesPloure = parseStoryMarkdown(abansQueComencesPloureMarkdown)
 const despresQueSortisSol = parseStoryMarkdown(despresQueSortisSolMarkdown)
+const gentleman = parseStoryMarkdown(gentlemanMarkdown)
 
 export const playlists = [{
   volume: 1,
@@ -395,6 +397,19 @@ export const playlists = [{
   tags: despresQueSortisSol.tags,
   songCount: despresQueSortisSol.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
   chapters: despresQueSortisSol.chapters,
+}, {
+  volume: 21,
+  slug: 'gentleman',
+  title: gentleman.title,
+  kicker: 'Sempre deia gràcies. Fins i tot quan no calia.',
+  description: gentleman.description,
+  cover: '/covers/gentleman.webp',
+  coverAlt: 'Un home tatuat amb americana de ratlles ajustant-se una corbata vermella',
+  spotifyUrl: 'https://open.spotify.com/playlist/49MMamEbu7sYGBZTjJ4KEP?si=46dd89a9b08d4ed8',
+  spotifyEmbedUrl: 'https://open.spotify.com/embed/playlist/49MMamEbu7sYGBZTjJ4KEP?utm_source=generator&theme=0',
+  tags: gentleman.tags,
+  songCount: gentleman.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
+  chapters: gentleman.chapters,
 }]
 
 export const getPlaylist = (slug) => playlists.find((playlist) => playlist.slug === slug)
