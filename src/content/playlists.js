@@ -16,6 +16,7 @@ import malaCollitaMarkdown from './mala-collita.md?raw'
 import totMalamentGraciesMarkdown from './tot-malament-gracies.md?raw'
 import ultimSoterraniTokioMarkdown from './lultim-soterrani-de-tokio.md?raw'
 import ultimDolarPastisMarkdown from './lultim-dolar-per-un-pastis-de-poma-amb-gelat.md?raw'
+import abansQueComencesPloureMarkdown from './abans-que-comences-a-ploure.md?raw'
 
 function parsePlaylistMarkdown(markdown) {
   const lines = markdown.replace(/\r/g, '').split('\n')
@@ -130,6 +131,7 @@ const malaCollita = parseStoryMarkdown(malaCollitaMarkdown)
 const totMalamentGracies = parseStoryMarkdown(totMalamentGraciesMarkdown)
 const ultimSoterraniTokio = parseStoryMarkdown(ultimSoterraniTokioMarkdown)
 const ultimDolarPastis = parseStoryMarkdown(ultimDolarPastisMarkdown)
+const abansQueComencesPloure = parseStoryMarkdown(abansQueComencesPloureMarkdown)
 
 export const playlists = [{
   volume: 1,
@@ -365,6 +367,19 @@ export const playlists = [{
   tags: ultimDolarPastis.tags,
   songCount: ultimDolarPastis.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
   chapters: ultimDolarPastis.chapters,
+}, {
+  volume: 19,
+  slug: 'abans-que-comences-a-ploure',
+  title: abansQueComencesPloure.title,
+  kicker: 'Tres amics, un cotxe abandonat a la carretera i mig milió de persones convençudes que aquell cap de setmana podia canviar alguna cosa.',
+  description: abansQueComencesPloure.description,
+  cover: '/covers/abans-que-comences-a-ploure.webp',
+  coverAlt: 'Tres joves hippies arribant a peu a un festival multitudinari l’any 1969',
+  spotifyUrl: 'https://open.spotify.com/playlist/2Jb5mR0aUknKs04CTBWGlL?si=4e02dc999a454ddb',
+  spotifyEmbedUrl: 'https://open.spotify.com/embed/playlist/2Jb5mR0aUknKs04CTBWGlL?utm_source=generator&theme=0',
+  tags: abansQueComencesPloure.tags,
+  songCount: abansQueComencesPloure.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
+  chapters: abansQueComencesPloure.chapters,
 }]
 
 export const getPlaylist = (slug) => playlists.find((playlist) => playlist.slug === slug)
