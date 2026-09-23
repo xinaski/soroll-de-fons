@@ -17,6 +17,7 @@ import totMalamentGraciesMarkdown from './tot-malament-gracies.md?raw'
 import ultimSoterraniTokioMarkdown from './lultim-soterrani-de-tokio.md?raw'
 import ultimDolarPastisMarkdown from './lultim-dolar-per-un-pastis-de-poma-amb-gelat.md?raw'
 import abansQueComencesPloureMarkdown from './abans-que-comences-a-ploure.md?raw'
+import despresQueSortisSolMarkdown from './despres-que-sortis-el-sol.md?raw'
 
 function parsePlaylistMarkdown(markdown) {
   const lines = markdown.replace(/\r/g, '').split('\n')
@@ -132,6 +133,7 @@ const totMalamentGracies = parseStoryMarkdown(totMalamentGraciesMarkdown)
 const ultimSoterraniTokio = parseStoryMarkdown(ultimSoterraniTokioMarkdown)
 const ultimDolarPastis = parseStoryMarkdown(ultimDolarPastisMarkdown)
 const abansQueComencesPloure = parseStoryMarkdown(abansQueComencesPloureMarkdown)
+const despresQueSortisSol = parseStoryMarkdown(despresQueSortisSolMarkdown)
 
 export const playlists = [{
   volume: 1,
@@ -380,6 +382,19 @@ export const playlists = [{
   tags: abansQueComencesPloure.tags,
   songCount: abansQueComencesPloure.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
   chapters: abansQueComencesPloure.chapters,
+}, {
+  volume: 20,
+  slug: 'despres-que-sortis-el-sol',
+  title: despresQueSortisSol.title,
+  kicker: 'La pluja havia de durar una estona. La resta també.',
+  description: despresQueSortisSol.description,
+  cover: '/covers/despres-que-sortis-el-sol.webp',
+  coverAlt: 'Tres amics bruts de fang caminant fora d’un festival hippie quan surt el sol',
+  spotifyUrl: 'https://open.spotify.com/playlist/1717LbTR55Pxhen3sWuS3s?si=509cfbad2bbf48e0',
+  spotifyEmbedUrl: 'https://open.spotify.com/embed/playlist/1717LbTR55Pxhen3sWuS3s?utm_source=generator&theme=0',
+  tags: despresQueSortisSol.tags,
+  songCount: despresQueSortisSol.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
+  chapters: despresQueSortisSol.chapters,
 }]
 
 export const getPlaylist = (slug) => playlists.find((playlist) => playlist.slug === slug)
