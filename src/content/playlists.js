@@ -19,6 +19,7 @@ import ultimDolarPastisMarkdown from './lultim-dolar-per-un-pastis-de-poma-amb-g
 import abansQueComencesPloureMarkdown from './abans-que-comences-a-ploure.md?raw'
 import despresQueSortisSolMarkdown from './despres-que-sortis-el-sol.md?raw'
 import gentlemanMarkdown from './gentleman.md?raw'
+import turnOnTuneInDropOutMarkdown from './turn-on-tune-in-drop-out.md?raw'
 
 function parsePlaylistMarkdown(markdown) {
   const lines = markdown.replace(/\r/g, '').split('\n')
@@ -136,6 +137,7 @@ const ultimDolarPastis = parseStoryMarkdown(ultimDolarPastisMarkdown)
 const abansQueComencesPloure = parseStoryMarkdown(abansQueComencesPloureMarkdown)
 const despresQueSortisSol = parseStoryMarkdown(despresQueSortisSolMarkdown)
 const gentleman = parseStoryMarkdown(gentlemanMarkdown)
+const turnOnTuneInDropOut = parseStoryMarkdown(turnOnTuneInDropOutMarkdown)
 
 export const playlists = [{
   volume: 1,
@@ -410,6 +412,19 @@ export const playlists = [{
   tags: gentleman.tags,
   songCount: gentleman.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
   chapters: gentleman.chapters,
+}, {
+  volume: 22,
+  slug: 'turn-on-tune-in-drop-out',
+  title: turnOnTuneInDropOut.title,
+  kicker: 'Una tarda tranquil·la. Un escriptor que hauria d’estar escrivint. Una porta que no para d’obrir-se.',
+  description: turnOnTuneInDropOut.description,
+  cover: '/covers/turn-on-tune-in-drop-out.webp',
+  coverAlt: 'Un rostre en colors magenta i blau amb espirals hipnòtiques reflectides a les ulleres',
+  spotifyUrl: 'https://open.spotify.com/playlist/4cbuyGs1HWKmVx55pSYFW3?si=54af8209d2da4dc0',
+  spotifyEmbedUrl: 'https://open.spotify.com/embed/playlist/4cbuyGs1HWKmVx55pSYFW3?utm_source=generator&theme=0',
+  tags: turnOnTuneInDropOut.tags,
+  songCount: turnOnTuneInDropOut.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
+  chapters: turnOnTuneInDropOut.chapters,
 }]
 
 export const getPlaylist = (slug) => playlists.find((playlist) => playlist.slug === slug)
