@@ -21,6 +21,7 @@ import despresQueSortisSolMarkdown from './despres-que-sortis-el-sol.md?raw'
 import gentlemanMarkdown from './gentleman.md?raw'
 import turnOnTuneInDropOutMarkdown from './turn-on-tune-in-drop-out.md?raw'
 import finsQueSacabiElCamiMarkdown from './fins-que-sacabi-el-cami.md?raw'
+import demaMarkdown from './dema.md?raw'
 
 function parsePlaylistMarkdown(markdown) {
   const lines = markdown.replace(/\r/g, '').split('\n')
@@ -140,6 +141,7 @@ const despresQueSortisSol = parseStoryMarkdown(despresQueSortisSolMarkdown)
 const gentleman = parseStoryMarkdown(gentlemanMarkdown)
 const turnOnTuneInDropOut = parseStoryMarkdown(turnOnTuneInDropOutMarkdown)
 const finsQueSacabiElCami = parseStoryMarkdown(finsQueSacabiElCamiMarkdown)
+const dema = parseStoryMarkdown(demaMarkdown)
 
 export const playlists = [{
   volume: 1,
@@ -440,6 +442,19 @@ export const playlists = [{
   tags: finsQueSacabiElCami.tags,
   songCount: finsQueSacabiElCami.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
   chapters: finsQueSacabiElCami.chapters,
+}, {
+  volume: 24,
+  slug: 'dema',
+  title: dema.title,
+  kicker: 'Havien quedat per prendre una copa. Aquest va ser el primer error de càlcul.',
+  description: dema.description,
+  cover: '/covers/dema.webp',
+  coverAlt: 'Les mans d’una parella asseguda molt a prop en un bar de llum càlida, amb una motxilla i dues cerveses',
+  spotifyUrl: 'https://open.spotify.com/playlist/1mlGQXBfTA6TFSklLxLKEo?si=25a8d6bc87b84e94',
+  spotifyEmbedUrl: 'https://open.spotify.com/embed/playlist/1mlGQXBfTA6TFSklLxLKEo?utm_source=generator&theme=0',
+  tags: dema.tags,
+  songCount: dema.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
+  chapters: dema.chapters,
 }]
 
 export const getPlaylist = (slug) => playlists.find((playlist) => playlist.slug === slug)
