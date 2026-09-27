@@ -20,6 +20,7 @@ import abansQueComencesPloureMarkdown from './abans-que-comences-a-ploure.md?raw
 import despresQueSortisSolMarkdown from './despres-que-sortis-el-sol.md?raw'
 import gentlemanMarkdown from './gentleman.md?raw'
 import turnOnTuneInDropOutMarkdown from './turn-on-tune-in-drop-out.md?raw'
+import finsQueSacabiElCamiMarkdown from './fins-que-sacabi-el-cami.md?raw'
 
 function parsePlaylistMarkdown(markdown) {
   const lines = markdown.replace(/\r/g, '').split('\n')
@@ -138,6 +139,7 @@ const abansQueComencesPloure = parseStoryMarkdown(abansQueComencesPloureMarkdown
 const despresQueSortisSol = parseStoryMarkdown(despresQueSortisSolMarkdown)
 const gentleman = parseStoryMarkdown(gentlemanMarkdown)
 const turnOnTuneInDropOut = parseStoryMarkdown(turnOnTuneInDropOutMarkdown)
+const finsQueSacabiElCami = parseStoryMarkdown(finsQueSacabiElCamiMarkdown)
 
 export const playlists = [{
   volume: 1,
@@ -425,6 +427,19 @@ export const playlists = [{
   tags: turnOnTuneInDropOut.tags,
   songCount: turnOnTuneInDropOut.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
   chapters: turnOnTuneInDropOut.chapters,
+}, {
+  volume: 23,
+  slug: 'fins-que-sacabi-el-cami',
+  title: finsQueSacabiElCami.title,
+  kicker: "Va sortir a caminar sense cap intenció de trobar-se a si mateix. Només volia arribar una mica més lluny que l'última vegada.",
+  description: finsQueSacabiElCami.description,
+  cover: '/covers/fins-que-sacabi-el-cami.webp',
+  coverAlt: 'Unes botes de muntanya descansant davant d’un llac envoltat de cims al capvespre',
+  spotifyUrl: 'https://open.spotify.com/playlist/0kAJtcdPb6Cj79yMj94bOL?si=b7d76082848e4303',
+  spotifyEmbedUrl: 'https://open.spotify.com/embed/playlist/0kAJtcdPb6Cj79yMj94bOL?utm_source=generator&theme=0',
+  tags: finsQueSacabiElCami.tags,
+  songCount: finsQueSacabiElCami.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
+  chapters: finsQueSacabiElCami.chapters,
 }]
 
 export const getPlaylist = (slug) => playlists.find((playlist) => playlist.slug === slug)
