@@ -22,6 +22,7 @@ import gentlemanMarkdown from './gentleman.md?raw'
 import turnOnTuneInDropOutMarkdown from './turn-on-tune-in-drop-out.md?raw'
 import finsQueSacabiElCamiMarkdown from './fins-que-sacabi-el-cami.md?raw'
 import demaMarkdown from './dema.md?raw'
+import camisaDeQuadresMarkdown from './camisa-de-quadres.md?raw'
 
 function parsePlaylistMarkdown(markdown) {
   const lines = markdown.replace(/\r/g, '').split('\n')
@@ -142,6 +143,7 @@ const gentleman = parseStoryMarkdown(gentlemanMarkdown)
 const turnOnTuneInDropOut = parseStoryMarkdown(turnOnTuneInDropOutMarkdown)
 const finsQueSacabiElCami = parseStoryMarkdown(finsQueSacabiElCamiMarkdown)
 const dema = parseStoryMarkdown(demaMarkdown)
+const camisaDeQuadres = parseStoryMarkdown(camisaDeQuadresMarkdown)
 
 export const playlists = [{
   volume: 1,
@@ -455,6 +457,19 @@ export const playlists = [{
   tags: dema.tags,
   songCount: dema.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
   chapters: dema.chapters,
+}, {
+  volume: 25,
+  slug: 'camisa-de-quadres',
+  title: camisaDeQuadres.title,
+  kicker: 'Al principi eren quatre. A mitja tarda ningú sabia quants eren.',
+  description: camisaDeQuadres.description,
+  cover: '/covers/camisa-de-quadres.webp',
+  coverAlt: 'Un jove amb camisa de quadres tocant una guitarra al costat d’una casa de camp durant el capvespre',
+  spotifyUrl: 'https://open.spotify.com/playlist/71Jon5dnMsccMxPFIXGOTb?si=a65e82e913a34635',
+  spotifyEmbedUrl: 'https://open.spotify.com/embed/playlist/71Jon5dnMsccMxPFIXGOTb?utm_source=generator&theme=0',
+  tags: camisaDeQuadres.tags,
+  songCount: camisaDeQuadres.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
+  chapters: camisaDeQuadres.chapters,
 }]
 
 export const getPlaylist = (slug) => playlists.find((playlist) => playlist.slug === slug)
