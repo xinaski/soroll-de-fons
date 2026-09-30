@@ -23,6 +23,7 @@ import turnOnTuneInDropOutMarkdown from './turn-on-tune-in-drop-out.md?raw'
 import finsQueSacabiElCamiMarkdown from './fins-que-sacabi-el-cami.md?raw'
 import demaMarkdown from './dema.md?raw'
 import camisaDeQuadresMarkdown from './camisa-de-quadres.md?raw'
+import foraDeTemporadaMarkdown from './fora-de-temporada.md?raw'
 
 function parsePlaylistMarkdown(markdown) {
   const lines = markdown.replace(/\r/g, '').split('\n')
@@ -144,6 +145,7 @@ const turnOnTuneInDropOut = parseStoryMarkdown(turnOnTuneInDropOutMarkdown)
 const finsQueSacabiElCami = parseStoryMarkdown(finsQueSacabiElCamiMarkdown)
 const dema = parseStoryMarkdown(demaMarkdown)
 const camisaDeQuadres = parseStoryMarkdown(camisaDeQuadresMarkdown)
+const foraDeTemporada = parseStoryMarkdown(foraDeTemporadaMarkdown)
 
 export const playlists = [{
   volume: 1,
@@ -470,6 +472,19 @@ export const playlists = [{
   tags: camisaDeQuadres.tags,
   songCount: camisaDeQuadres.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
   chapters: camisaDeQuadres.chapters,
+}, {
+  volume: 26,
+  slug: 'fora-de-temporada',
+  title: foraDeTemporada.title,
+  kicker: 'Hi ha llocs als quals no vas perquè passi alguna cosa. Hi vas perquè, durant una estona, no passi res.',
+  description: foraDeTemporada.description,
+  cover: '/covers/fora-de-temporada.webp',
+  coverAlt: 'Una persona asseguda en una cadira plegable davant del mar durant una posta de sol d’hivern',
+  spotifyUrl: 'https://open.spotify.com/playlist/3ZCqUbuGjIgnxMGlFC0ped?si=05e565ff54344aba',
+  spotifyEmbedUrl: 'https://open.spotify.com/embed/playlist/3ZCqUbuGjIgnxMGlFC0ped?utm_source=generator&theme=0',
+  tags: foraDeTemporada.tags,
+  songCount: foraDeTemporada.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
+  chapters: foraDeTemporada.chapters,
 }]
 
 export const getPlaylist = (slug) => playlists.find((playlist) => playlist.slug === slug)
