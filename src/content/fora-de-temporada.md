@@ -8,11 +8,13 @@ Una tarda d'hivern. Una platja gairebé buida, una cadira plegable i un termo de
 
 ## Etiquetes
 
-Piano · Ambient · Neo-clàssica · Folk · Hivern · Mar · Solitud · Records · Capvespre
+Intimitat · Solitud · Records · Mar · Hivern · Capvespre · Silenci · Melancolia
 
 ---
 
 # Bloc I — Arribar
+
+Encara hi ha sol i durant una estona sembla que no sigui hivern. Aparca davant d'una platja gairebé buida, treu una cadira del maleter i baixa fins a la sorra amb un termo de cafè. No ha vingut a fer res. Precisament per això ha vingut.
 
 ## 1. Je te laisserai des mots — Patrick Watson
 Condueix amb la calefacció baixa i les ulleres de sol posades. És hivern, però el sol entra pel parabrisa amb prou força perquè molesti. Al seient del copilot hi ha un termo de cafè. Al maleter, una cadira plegable que fa mesos que va amunt i avall amb el cotxe. No té cap pla més complicat que aquest.
@@ -32,6 +34,8 @@ S'asseu. Obre el termo i s'omple el tap. El cafè crema massa. En fa un glop igu
 ---
 
 # Bloc II — Al sol s'hi està bé
+
+El cafè encara crema i el sol escalfa prou per obrir-se la jaqueta. Hi ha poca gent, una mica de vent i tot el temps del món. Durant una estona, estar allà assegut sembla una ocupació perfectament raonable.
 
 ## 6. Holocene — Bon Iver
 El sol li toca directament a la cara. Fa fred, però assegut allà i protegit del vent s'hi està sorprenentment bé. S'obre la jaqueta. Durant uns minuts tanca els ulls. El mar continua fent exactament el mateix amb ell o sense ell.
@@ -58,6 +62,8 @@ Quan torna a mirar l'horitzó, la llum ja ha començat a canviar. Encara escalfa
 
 # Bloc III — Coses que tornen
 
+Quan deixes de fer coses, el cap n'inventa. Apareixen llocs, veus, mans, frases que feia anys que no recordava. Alguns records arriben sencers; d'altres només deixen una sensació abans de tornar a marxar.
+
 ## 13. Remembrance — Balmorhea
 Hi ha records que arriben sencers i d'altres que només porten una textura. Una taula de fusta. Unes mans tallant pa. Algú rient en una habitació que ja no sabria situar. No recorda què s'estava celebrant. Recorda perfectament la llum.
 
@@ -76,6 +82,8 @@ Torna a tancar els ulls. Aquesta vegada no hi ha cap record concret. Només una 
 ---
 
 # Bloc IV — Comença a refrescar
+
+El sol baixa i l'hivern torna a ocupar el seu lloc. Es corda la jaqueta, el cafè deixa de cremar i el mar canvia de color. Amb la llum també canvien els records: alguns pesen una mica més quan comença a fer fred.
 
 ## 18. Only the Winds — Ólafur Arnalds
 Una ràfega de vent li fa obrir els ulls. El sol ja és molt més baix. Es tanca la jaqueta fins a dalt i enfonsa les mans a les butxaques. Fa mitja hora semblava que l'hivern s'hagués equivocat de dia. Ara torna a quedar clar quin mes és.
@@ -102,6 +110,8 @@ El cafè està tebi. Se'l beu lentament mentre el sol desapareix. No hi ha cap m
 
 # Bloc V — Després del sol
 
+La platja es va quedant buida fins que pràcticament només queda ell. Es posa la caputxa, aguanta el termo entre les mans i continua mirant un mar que ja gairebé no és blau. No espera ningú. No espera res. I potser aquesta és la millor part.
+
 ## 25. Samskeyti - Live — Sigur Rós
 Quan el sol ja no hi és, la platja es buida de pressa. La dona del gos fa estona que ha marxat. La parella també. Queda un corredor lluny, una figura petita avançant pel passeig, i ell assegut en una cadira de càmping com si esperés alguna cosa.
 
@@ -126,6 +136,8 @@ Davant seu el mar ja és gairebé negre. Al darrere s'han encès els fanals del 
 ---
 
 # Bloc VI — Tornar
+
+Ja és fosc i fa massa fred per continuar fingint que s'hi està bé. Plega la cadira, guarda el llibre que gairebé no ha llegit i torna cap al cotxe. La platja queda enrere exactament igual que quan ha arribat. Ell, probablement, també.
 
 ## 32. Window — The Album Leaf
 Es queda cinc minuts més. Aquesta vegada sí que sap que són cinc perquè acaba de mirar el rellotge. Quan passen, continua assegut dos minuts més. No hi ha ningú per reclamar-li la incoherència.
