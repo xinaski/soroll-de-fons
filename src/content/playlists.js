@@ -25,6 +25,8 @@ import demaMarkdown from './dema.md?raw'
 import camisaDeQuadresMarkdown from './camisa-de-quadres.md?raw'
 import foraDeTemporadaMarkdown from './fora-de-temporada.md?raw'
 
+import disfoniaMarkdown from './disfonia.md?raw'
+
 function parsePlaylistMarkdown(markdown) {
   const lines = markdown.replace(/\r/g, '').split('\n')
   const title = lines.find((line) => line.startsWith('# '))?.slice(2).trim() ?? ''
@@ -146,6 +148,8 @@ const finsQueSacabiElCami = parseStoryMarkdown(finsQueSacabiElCamiMarkdown)
 const dema = parseStoryMarkdown(demaMarkdown)
 const camisaDeQuadres = parseStoryMarkdown(camisaDeQuadresMarkdown)
 const foraDeTemporada = parseStoryMarkdown(foraDeTemporadaMarkdown)
+
+const disfonia = parseStoryMarkdown(disfoniaMarkdown)
 
 export const playlists = [{
   volume: 1,
@@ -485,6 +489,19 @@ export const playlists = [{
   tags: foraDeTemporada.tags,
   songCount: foraDeTemporada.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
   chapters: foraDeTemporada.chapters,
+}, {
+  volume: 27,
+  slug: 'disfonia',
+  title: disfonia.title,
+  kicker: "Dues persones que encara s'estimen. Una última nit. I tot el que queda per dir quan ja no queda res a arreglar.",
+  description: disfonia.description,
+  cover: '/covers/disfonia.webp',
+  coverAlt: 'Dues cadires buides al voltant d’una taula de fusta amb una ampolla i dos gots, il·luminades pel sol del matí',
+  spotifyUrl: 'https://open.spotify.com/playlist/1ynBbcIlDIwGZBaC5IG0xW?si=0afc0ff427bc455d',
+  spotifyEmbedUrl: 'https://open.spotify.com/embed/playlist/1ynBbcIlDIwGZBaC5IG0xW?utm_source=generator&theme=0',
+  tags: disfonia.tags,
+  songCount: disfonia.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
+  chapters: disfonia.chapters,
 }]
 
 export const getPlaylist = (slug) => playlists.find((playlist) => playlist.slug === slug)
