@@ -27,6 +27,8 @@ import foraDeTemporadaMarkdown from './fora-de-temporada.md?raw'
 
 import disfoniaMarkdown from './disfonia.md?raw'
 
+import sensePlansMarkdown from './sense-plans.md?raw'
+
 function parsePlaylistMarkdown(markdown) {
   const lines = markdown.replace(/\r/g, '').split('\n')
   const title = lines.find((line) => line.startsWith('# '))?.slice(2).trim() ?? ''
@@ -150,6 +152,8 @@ const camisaDeQuadres = parseStoryMarkdown(camisaDeQuadresMarkdown)
 const foraDeTemporada = parseStoryMarkdown(foraDeTemporadaMarkdown)
 
 const disfonia = parseStoryMarkdown(disfoniaMarkdown)
+
+const sensePlans = parseStoryMarkdown(sensePlansMarkdown)
 
 export const playlists = [{
   volume: 1,
@@ -502,6 +506,19 @@ export const playlists = [{
   tags: disfonia.tags,
   songCount: disfonia.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
   chapters: disfonia.chapters,
+}, {
+  volume: 28,
+  slug: 'sense-plans',
+  title: sensePlans.title,
+  kicker: 'Va sortir de casa sense cap pla. Va tornar quan el diumenge ja havia començat.',
+  description: sensePlans.description,
+  cover: '/covers/sense-plans.webp',
+  coverAlt: 'Dues persones amb tatuatges assegudes juntes en uns graons de nit, amb una cervesa al costat',
+  spotifyUrl: 'https://open.spotify.com/playlist/5oB7NbxBrwKxiQ5nq3QZ3r?si=f6baec7d72144ebc',
+  spotifyEmbedUrl: 'https://open.spotify.com/embed/playlist/5oB7NbxBrwKxiQ5nq3QZ3r?utm_source=generator&theme=0',
+  tags: sensePlans.tags,
+  songCount: sensePlans.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
+  chapters: sensePlans.chapters,
 }]
 
 export const getPlaylist = (slug) => playlists.find((playlist) => playlist.slug === slug)
