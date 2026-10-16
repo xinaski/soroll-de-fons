@@ -25,7 +25,7 @@
           <ol class="track-list" :start="chapter.songs[0]?.number">
             <li v-for="song in chapter.songs" :key="song.number" class="track">
               <span class="track-number">{{ String(song.number).padStart(2, '0') }}</span>
-              <div><p class="track-title"><strong>{{ song.artist }}</strong> — {{ song.title }}</p><p>{{ song.text }}</p></div>
+              <div><p class="track-title"><strong>{{ song.artist }}</strong> — {{ song.title }}</p><p v-if="song.intro" class="track-intro"><em>{{ song.intro }}</em></p><p>{{ song.text }}</p></div>
             </li>
           </ol>
           <a href="#top" class="chapter-top">Tornar a l'índex ↑</a>

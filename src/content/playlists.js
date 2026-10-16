@@ -1,3 +1,4 @@
+import benzinaMarkdown from './benzina-bolets-i-rocknroll.md?raw'
 import malesIntencionsMarkdown from './males-intencions.md?raw'
 import diumengeComunaMarkdown from './diumenge-a-la-comuna.md?raw'
 import sortidaEquivocadaMarkdown from './la-sortida-equivocada.md?raw'
@@ -65,7 +66,7 @@ function cleanMarkdown(text) {
   return text.replace(/^\*\*(.+)\*\*$/, '$1').replace(/^\*(.+)\*$/, '$1').trim()
 }
 
-function parseStoryMarkdown(markdown) {
+function parseStoryMarkdown(markdown, songIntros = false) {
   const lines = markdown.replace(/\r/g, '').split('\n')
   const title = lines.find((line) => line.startsWith('# '))?.slice(2).trim() ?? ''
   const descriptionStart = lines.findIndex((line) => line.trim() === '## Descripció')
@@ -116,6 +117,10 @@ function parseStoryMarkdown(markdown) {
     }
 
     if (!chapter || !line || line === '---') continue
+    if (songIntros && song && !song.text && !song.intro && /^\*[^*].*\*$/.test(line)) {
+      song.intro = cleanMarkdown(line)
+      continue
+    }
     const cleaned = cleanMarkdown(line)
     if (song) song.text += `${song.text ? ' ' : ''}${cleaned}`
     else chapter.subtitle += `${chapter.subtitle ? ' ' : ''}${cleaned}`
@@ -154,6 +159,8 @@ const foraDeTemporada = parseStoryMarkdown(foraDeTemporadaMarkdown)
 const disfonia = parseStoryMarkdown(disfoniaMarkdown)
 
 const sensePlans = parseStoryMarkdown(sensePlansMarkdown)
+
+const benzina = parseStoryMarkdown(benzinaMarkdown, true)
 
 export const playlists = [{
   volume: 1,
@@ -519,6 +526,19 @@ export const playlists = [{
   tags: sensePlans.tags,
   songCount: sensePlans.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
   chapters: sensePlans.chapters,
+}, {
+  volume: 29,
+  slug: "benzina-bolets-i-rocknroll",
+  title: benzina.title,
+  kicker: "Una nit que havia de ser tranquil·la.",
+  description: benzina.description,
+  cover: "/covers/benzina-bolets-i-rocknroll.webp",
+  coverAlt: "Quatre persones al costat d’un cotxe a la muntanya sota una lluna plena, amb un barret de cowboy sobre el capó",
+  spotifyUrl: "https://open.spotify.com/playlist/7KDHCATEgirHejjdg7Msfd?si=9a231699ea2b49af",
+  spotifyEmbedUrl: "https://open.spotify.com/embed/playlist/7KDHCATEgirHejjdg7Msfd?utm_source=generator&theme=0",
+  tags: benzina.tags,
+  songCount: benzina.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
+  chapters: benzina.chapters,
 }]
 
 export const getPlaylist = (slug) => playlists.find((playlist) => playlist.slug === slug)
