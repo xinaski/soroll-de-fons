@@ -1,3 +1,4 @@
+import menstrualMarkdown from './menstrual-mix.md?raw'
 import abansClausMarkdown from './abans-de-tornar-les-claus.md?raw'
 import benzinaMarkdown from './benzina-bolets-i-rocknroll.md?raw'
 import malesIntencionsMarkdown from './males-intencions.md?raw'
@@ -164,6 +165,8 @@ const sensePlans = parseStoryMarkdown(sensePlansMarkdown)
 const benzina = parseStoryMarkdown(benzinaMarkdown, true)
 
 const abansClaus = parseStoryMarkdown(abansClausMarkdown, true)
+
+const menstrual = parseStoryMarkdown(menstrualMarkdown, true)
 
 export const playlists = [{
   volume: 1,
@@ -555,6 +558,19 @@ export const playlists = [{
   tags: abansClaus.tags,
   songCount: abansClaus.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
   chapters: abansClaus.chapters,
+}, {
+  volume: 31,
+  slug: 'menstrual-mix',
+  title: menstrual.title,
+  kicker: "Una història d'amor, sang i decisions qüestionables.",
+  description: menstrual.description,
+  cover: '/covers/menstrual-mix.webp',
+  coverAlt: 'Una onada de sang vermella inunda un passadís davant de les portes d’uns ascensors',
+  spotifyUrl: 'https://open.spotify.com/playlist/4KyLrr8a1IKlXLWNRX7wBc?si=fa86102a08784e30',
+  spotifyEmbedUrl: 'https://open.spotify.com/embed/playlist/4KyLrr8a1IKlXLWNRX7wBc?utm_source=generator&theme=0',
+  tags: menstrual.tags,
+  songCount: menstrual.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
+  chapters: menstrual.chapters,
 }]
 
 export const getPlaylist = (slug) => playlists.find((playlist) => playlist.slug === slug)
