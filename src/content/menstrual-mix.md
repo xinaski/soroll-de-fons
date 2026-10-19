@@ -200,9 +200,9 @@ Ell anuncia que té una sorpresa. Ella el mira amb desconfiança. «Si és una a
 
 ## 27. Bloodstream — Ed Sheeran
 
-*Una obra d'art incomprendida.*
+*Una obra d'art incomresa.*
 
-Agafa el mòbil, obre Spotify i li ensenya una playlist. Es diu *Menstrual Mix*. Ella arrufa el nas. Ell explica que totes les cançons tenen alguna referència a la sang, el vermell, el dolor o la regla. Ella comença a llegir els títols. Al tercer ja riu. Al sisè li torna a fer mal la panxa.
+Agafa el mòbil, obre Spotify i li ensenya una playlist. Es diu *Menstrual Mix*. Ella arrufa el nas i comença a llegir els títols. Al tercer ja riu. Al sisè li torna a fer mal la panxa. Ell somriu, orgullós de la seva obra. Ella li demana que no torni a fer servir mai més la paraula «romàntic».
 
 ## 28. Blood Is Thicker Than Water — Wyclef Jean
 
