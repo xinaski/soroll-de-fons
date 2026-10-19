@@ -1,3 +1,4 @@
+import abansClausMarkdown from './abans-de-tornar-les-claus.md?raw'
 import benzinaMarkdown from './benzina-bolets-i-rocknroll.md?raw'
 import malesIntencionsMarkdown from './males-intencions.md?raw'
 import diumengeComunaMarkdown from './diumenge-a-la-comuna.md?raw'
@@ -161,6 +162,8 @@ const disfonia = parseStoryMarkdown(disfoniaMarkdown)
 const sensePlans = parseStoryMarkdown(sensePlansMarkdown)
 
 const benzina = parseStoryMarkdown(benzinaMarkdown, true)
+
+const abansClaus = parseStoryMarkdown(abansClausMarkdown, true)
 
 export const playlists = [{
   volume: 1,
@@ -539,6 +542,19 @@ export const playlists = [{
   tags: benzina.tags,
   songCount: benzina.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
   chapters: benzina.chapters,
+}, {
+  volume: 30,
+  slug: "abans-de-tornar-les-claus",
+  title: abansClaus.title,
+  kicker: "Havia tornat per buidar la casa. L’endemà, a les deu, havia de deixar-la tancada.",
+  description: abansClaus.description,
+  cover: "/covers/abans-de-tornar-les-claus.webp",
+  coverAlt: "Un home d’esquena amb gorro de llana i jaqueta marró davant d’una casa antiga amb jardí a la tardor",
+  spotifyUrl: "https://open.spotify.com/playlist/07jcEY6BWIxpRU8p4SzQEH?si=d7fd05de252541c8",
+  spotifyEmbedUrl: "https://open.spotify.com/embed/playlist/07jcEY6BWIxpRU8p4SzQEH?utm_source=generator&theme=0",
+  tags: abansClaus.tags,
+  songCount: abansClaus.chapters.reduce((total, chapter) => total + chapter.songs.length, 0),
+  chapters: abansClaus.chapters,
 }]
 
 export const getPlaylist = (slug) => playlists.find((playlist) => playlist.slug === slug)
